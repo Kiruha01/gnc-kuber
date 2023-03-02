@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caesar-front
+  labels:
+    app: nginx-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-server
+  template:
+    metadata:
+      labels:
+        app: nginx-server
+    spec:
+      containers:
+        - name: front-app-nginx
+          image: kiruha01/test-front:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+

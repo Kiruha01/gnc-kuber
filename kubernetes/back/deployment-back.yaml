@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caesar-back
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: python-application
+          image: kiruha01/test-back:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
