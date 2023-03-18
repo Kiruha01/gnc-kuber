@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: python-application
-          image: kiruha01/test-back:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/kiruha01/gnc-kuber-back:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000

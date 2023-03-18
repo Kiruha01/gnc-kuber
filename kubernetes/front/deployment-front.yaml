@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: front-app-nginx
-          image: kiruha01/test-front:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/kiruha01/gnc-kuber-front:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 
